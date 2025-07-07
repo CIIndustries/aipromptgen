@@ -218,6 +218,17 @@ export default function ToolsPage() {
     },
     {
       id: 18,
+      name: 'Anthropic Claude',
+      category: 'Writing',
+      description: 'Constitutional AI for safe, helpful, and honest conversations',
+      rating: 4.7,
+      features: ['Safety First', 'Long Context', 'Code & Analysis', 'Reasoning'],
+      pricing: 'Free + Premium',
+      website: 'https://claude.ai',
+      isFeatured: false
+    },
+    {
+      id: 19,
       name: 'Google Gemini',
       category: 'Writing',
       description: 'Google\'s multimodal AI model for text, images, and code',
@@ -228,7 +239,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 19,
+      id: 20,
       name: 'Microsoft Copilot',
       category: 'Productivity',
       description: 'AI assistant integrated across Microsoft 365 apps',
@@ -239,7 +250,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 20,
+      id: 21,
       name: 'Replit AI',
       category: 'Coding',
       description: 'AI coding assistant for collaborative programming',
@@ -250,7 +261,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 21,
+      id: 22,
       name: 'Writesonic',
       category: 'Writing',
       description: 'AI writing platform for content creation and copywriting',
@@ -261,7 +272,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 22,
+      id: 23,
       name: 'Synthesia',
       category: 'Video',
       description: 'AI video generation platform with virtual presenters',
@@ -272,7 +283,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 23,
+      id: 24,
       name: 'Luma AI',
       category: 'Video',
       description: 'AI platform for 3D content creation and video generation',
@@ -283,7 +294,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 24,
+      id: 25,
       name: 'Grammarly',
       category: 'Writing',
       description: 'AI-powered writing assistant for grammar and style',
@@ -294,7 +305,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 25,
+      id: 26,
       name: 'Murf AI',
       category: 'Audio',
       description: 'AI voice generator for creating realistic voiceovers',
@@ -305,7 +316,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 26,
+      id: 27,
       name: 'Tome',
       category: 'Productivity',
       description: 'AI-powered presentation and storytelling platform',
@@ -316,7 +327,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 27,
+      id: 28,
       name: 'Hugging Face',
       category: 'Research',
       description: 'Open-source platform for machine learning and AI models',
@@ -327,7 +338,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 28,
+      id: 29,
       name: 'Poe by Quora',
       category: 'Writing',
       description: 'Platform to access multiple AI chatbots in one place',
@@ -338,7 +349,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 29,
+      id: 30,
       name: 'Character.AI',
       category: 'Writing',
       description: 'Platform for creating and chatting with AI characters',
@@ -349,51 +360,7 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 30,
-      name: 'Wordtune',
-      category: 'Writing',
-      description: 'AI writing companion for rewriting and improving text',
-      rating: 4.3,
-      features: ['Text Rewriting', 'Tone Adjustment', 'Grammar Check', 'Browser Extension'],
-      pricing: 'Free + Premium',
-      website: 'https://wordtune.com',
-      isFeatured: false
-    },
-    {
       id: 31,
-      name: 'Otter.ai',
-      category: 'Audio',
-      description: 'AI-powered transcription and meeting notes',
-      rating: 4.5,
-      features: ['Transcription', 'Meeting Notes', 'Live Captions', 'Collaboration'],
-      pricing: 'Free + Premium',
-      website: 'https://otter.ai',
-      isFeatured: false
-    },
-    {
-      id: 32,
-      name: 'Descript',
-      category: 'Audio',
-      description: 'AI-powered audio and video editing with text-based editing',
-      rating: 4.4,
-      features: ['Audio Editing', 'Video Editing', 'Transcription', 'Voice Cloning'],
-      pricing: 'Free + Premium',
-      website: 'https://descript.com',
-      isFeatured: false
-    },
-    {
-      id: 33,
-      name: 'Framer AI',
-      category: 'Design',
-      description: 'AI-powered website builder with advanced design capabilities',
-      rating: 4.5,
-      features: ['Website Builder', 'AI Design', 'Responsive', 'Advanced Animations'],
-      pricing: 'Free + Premium',
-      website: 'https://framer.com',
-      isFeatured: false
-    },
-    {
-      id: 34,
       name: 'Replika',
       category: 'Writing',
       description: 'AI companion for conversations and emotional support',
@@ -404,14 +371,47 @@ export default function ToolsPage() {
       isFeatured: false
     },
     {
-      id: 35,
-      name: 'Anthropic Claude',
-      category: 'Research',
-      description: 'Constitutional AI for safe, helpful, and honest conversations',
-      rating: 4.7,
-      features: ['Safety First', 'Long Context', 'Code & Analysis', 'Reasoning'],
+      id: 32,
+      name: 'Wordtune',
+      category: 'Writing',
+      description: 'AI writing companion for rewriting and improving text',
+      rating: 4.3,
+      features: ['Text Rewriting', 'Tone Adjustment', 'Grammar Check', 'Browser Extension'],
       pricing: 'Free + Premium',
-      website: 'https://claude.ai',
+      website: 'https://wordtune.com',
+      isFeatured: false
+    },
+    {
+      id: 33,
+      name: 'Otter.ai',
+      category: 'Audio',
+      description: 'AI-powered transcription and meeting notes',
+      rating: 4.5,
+      features: ['Transcription', 'Meeting Notes', 'Live Captions', 'Collaboration'],
+      pricing: 'Free + Premium',
+      website: 'https://otter.ai',
+      isFeatured: false
+    },
+    {
+      id: 34,
+      name: 'Descript',
+      category: 'Audio',
+      description: 'AI-powered audio and video editing with text-based editing',
+      rating: 4.4,
+      features: ['Audio Editing', 'Video Editing', 'Transcription', 'Voice Cloning'],
+      pricing: 'Free + Premium',
+      website: 'https://descript.com',
+      isFeatured: false
+    },
+    {
+      id: 35,
+      name: 'Framer AI',
+      category: 'Design',
+      description: 'AI-powered website builder with advanced design capabilities',
+      rating: 4.5,
+      features: ['Website Builder', 'AI Design', 'Responsive', 'Advanced Animations'],
+      pricing: 'Free + Premium',
+      website: 'https://framer.com',
       isFeatured: false
     }
   ]
@@ -500,9 +500,9 @@ Submitted from AIPromptGen.tech AI Tools Directory`,
                 {categories.map((category) => (
                   <button
                     key={category}
-                    onClick={() => setSelectedCategory(category.toLowerCase().replace(' ', ''))}
+                    onClick={() => setSelectedCategory(category === 'All Tools' ? 'all' : category.toLowerCase().replace(' ', ''))}
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                      selectedCategory === category.toLowerCase().replace(' ', '')
+                      selectedCategory === (category === 'All Tools' ? 'all' : category.toLowerCase().replace(' ', ''))
                         ? 'bg-blue-500 text-white'
                         : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                     }`}
