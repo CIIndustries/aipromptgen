@@ -119,7 +119,7 @@ export default function PrivacyPage() {
                 If you have any questions about this Privacy Policy, please contact us:
               </p>
               <div className="mt-4 p-4 bg-gray-700 rounded-lg">
-                <p className="text-blue-400 font-medium">Email: cyberintelindustries@gmail.com</p>
+                <p className="text-blue-400 font-medium">Email: support@aipromptgen.tech</p>
                 <p className="text-gray-300">Website: https://aipromptgen.tech</p>
                 <p className="text-gray-300">Subject Line: Privacy Policy Inquiry</p>
               </div>
