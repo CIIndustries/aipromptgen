@@ -6,13 +6,13 @@ const nextConfig = {
     unoptimized: true
   },
   env: {
-    REACT_APP_BACKEND_URL: process.env.REACT_APP_BACKEND_URL,
+    NEXT_PUBLIC_BACKEND_URL: process.env.NEXT_PUBLIC_BACKEND_URL,
   },
   async rewrites() {
     return [
       {
         source: '/api/:path*',
-        destination: `${process.env.REACT_APP_BACKEND_URL}/api/:path*`,
+        destination: `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/:path*`,
       },
     ];
   },
