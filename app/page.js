@@ -7,7 +7,7 @@ import DonationPopup from '../components/DonationPopup'
 import VoiceInput from '../components/VoiceInput'
 import { showToast } from '../components/Toast'
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://aipromptgen.tech-backend-production.up.railway.app'
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL
 const API = `${BACKEND_URL}/api`
 
 export default function Home() {
@@ -80,7 +80,7 @@ export default function Home() {
 
     try {
       const response = await axios.post(`${API}/generate-prompt`, {
-        prompt: inputPrompt,
+        user_input: inputPrompt,
         target_model: selectedModel
       })
       setGeneratedPrompt(response.data.enhanced_prompt)
@@ -123,7 +123,7 @@ export default function Home() {
   const handleFavorite = async () => {
     try {
       await axios.post(`${API}/favorites`, {
-        original_prompt: inputPrompt,
+        original_input: inputPrompt,
         enhanced_prompt: generatedPrompt,
         target_model: selectedModel
       })
