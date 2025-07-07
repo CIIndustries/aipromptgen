@@ -5,7 +5,7 @@ import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { showToast } from '../../components/Toast'
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://aipromptgen.tech-backend-production.up.railway.app'
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL
 const API = `${BACKEND_URL}/api`
 
 export default function HistoryPage() {
@@ -19,7 +19,7 @@ export default function HistoryPage() {
 
   const loadHistory = async () => {
     try {
-      const response = await axios.get(`${API}/history`)
+      const response = await axios.get(`${API}/prompt-history`)
       setHistory(response.data || [])
     } catch (error) {
       console.error('Failed to load history:', error)
@@ -130,9 +130,9 @@ export default function HistoryPage() {
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex-1">
                       <h3 className="font-semibold text-blue-400 mb-2">Original Input:</h3>
-                      <p className="text-gray-200 mb-3">{item.original_prompt}</p>
+                      <p className="text-gray-200 mb-3">{item.original_input}</p>
                       <div className="flex items-center space-x-4 text-sm text-gray-400">
-                        <span>📅 {formatDate(item.created_at)}</span>
+                        <span>📅 {formatDate(item.timestamp)}</span>
                         <span>🤖 {item.target_model || 'General'}</span>
                       </div>
                     </div>
