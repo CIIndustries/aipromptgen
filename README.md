@@ -30,3 +30,13 @@ A professional AI prompt generator built with Next.js 14, optimized for SEO and 
    git clone https://github.com/yourusername/aipromptgen.git
    cd aipromptgen
    npm install
+Set up environment:
+
+cp .env.example .env.local
+# Edit .env.local with your values
+Run development server:
+
+npm run dev
+Build for production:
+
+npm run build
