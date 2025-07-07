@@ -109,7 +109,7 @@ export default function ContactPage() {
                   href="mailto:cyberintelindustries@gmail.com" 
                   className="text-blue-400 hover:text-blue-300 transition-colors"
                 >
-                  cyberintelindustries@gmail.com
+                  support@aipromptgen.tech.com
                 </a>
               </div>
 
