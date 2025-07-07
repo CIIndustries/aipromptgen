@@ -5,7 +5,7 @@ import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { showToast } from '../../components/Toast'
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://aipromptgen.tech-backend-production.up.railway.app'
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL
 const API = `${BACKEND_URL}/api`
 
 export default function FavoritesPage() {
@@ -132,9 +132,9 @@ export default function FavoritesPage() {
                         <span className="text-yellow-400">⭐</span>
                         <h3 className="font-semibold text-blue-400">Original Input:</h3>
                       </div>
-                      <p className="text-gray-200 mb-3">{item.original_prompt}</p>
+                      <p className="text-gray-200 mb-3">{item.original_input}</p>
                       <div className="flex items-center space-x-4 text-sm text-gray-400">
-                        <span>📅 {formatDate(item.created_at)}</span>
+                        <span>📅 {formatDate(item.timestamp)}</span>
                         <span>🤖 {item.target_model || 'General'}</span>
                       </div>
                     </div>
