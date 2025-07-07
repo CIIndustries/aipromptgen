@@ -1,407 +1,512 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
+import { showToast } from '../../components/Toast'
 
 export default function BlogPage() {
-  const [selectedCategory, setSelectedCategory] = useState('all')
-  const [searchQuery, setSearchQuery] = useState('')
-  const [selectedPost, setSelectedPost] = useState(null)
+  const [blogPosts, setBlogPosts] = useState([])
+  const [selectedBlogCategory, setSelectedBlogCategory] = useState('all')
+  const [blogSearchQuery, setBlogSearchQuery] = useState('')
+  const [selectedBlogPost, setSelectedBlogPost] = useState(null)
+  const [isBlogModalOpen, setIsBlogModalOpen] = useState(false)
 
-  const categories = ['All', 'AI Tools', 'Prompt Engineering', 'Tutorials', 'Industry News', 'Tips & Tricks']
+  useEffect(() => {
+    // Initialize Blog Posts - copied exactly from original React app
+    setBlogPosts([
+      {
+        id: 1,
+        title: "The Complete Guide to AI Prompt Engineering in 2025",
+        excerpt: "Master the art and science of prompt engineering with advanced techniques that professional AI engineers use daily.",
+        category: "prompt-engineering",
+        author: "AIPromptGen Research Team",
+        authorRole: "Senior Prompt Engineers",
+        date: "2025-01-15",
+        readTime: "12 min read",
+        rating: 4.9,
+        views: "15.2K",
+        tags: ["Prompt Engineering", "Advanced Techniques", "Best Practices", "Tutorial"],
+        featured: true,
+        content: `# The Complete Guide to AI Prompt Engineering in 2025
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: 'The Complete Guide to AI Prompt Engineering in 2025',
-      excerpt: 'Master the art of creating effective AI prompts with our comprehensive guide covering techniques, best practices, and real-world examples.',
-      content: `
-# The Complete Guide to AI Prompt Engineering in 2025
+## Introduction
 
-Prompt engineering has become one of the most valuable skills in the AI era. Whether you're working with ChatGPT, Claude, Gemini, or any other AI model, knowing how to craft effective prompts can dramatically improve your results.
+Prompt engineering has evolved from a simple art to a sophisticated science that can dramatically improve AI model performance. In 2025, the field has matured with established best practices, proven techniques, and measurable methodologies.
 
-## What is Prompt Engineering?
+## Core Principles of Effective Prompt Engineering
 
-Prompt engineering is the practice of designing and optimizing text inputs to get the best possible outputs from AI language models. It's both an art and a science that requires understanding how AI models interpret and respond to different types of instructions.
+### 1. Context Setting
+The foundation of any great prompt lies in establishing clear context. Your AI model needs to understand the specific domain, target audience, desired output format, and any constraints.
 
-## Key Principles
+### 2. Instruction Clarity
+Ambiguous instructions lead to unpredictable results. Use specific action verbs, clear parameters, examples when possible, and step-by-step breakdowns for complex tasks.
 
-### 1. Be Specific and Clear
-Instead of: "Write about dogs"
-Try: "Write a 300-word article about the benefits of adopting rescue dogs for first-time pet owners"
-
-### 2. Use Context and Examples
-Provide background information and examples to guide the AI's response.
-
-### 3. Structure Your Prompts
-Use clear formatting, bullet points, and numbered lists to organize your requests.
+### 3. Output Formatting
+Define exactly how you want the response structured using templates, length requirements, tone preferences, and formatting instructions.
 
 ## Advanced Techniques
 
-- **Chain of Thought**: Ask the AI to explain its reasoning step by step
-- **Role Playing**: Have the AI take on specific personas or expertise
-- **Template Prompts**: Create reusable prompt structures for common tasks
+### Chain-of-Thought Prompting
+Guide the AI through logical reasoning steps by asking it to think through problems step by step.
+
+### Few-Shot Learning
+Provide examples to establish patterns that the AI can follow for new inputs.
+
+### Role-Based Prompting
+Assign specific roles to leverage domain expertise and get more targeted responses.
 
 ## Conclusion
 
-Mastering prompt engineering takes practice, but the investment is worth it. Start with these fundamentals and gradually experiment with more advanced techniques.
-      `,
-      category: 'Prompt Engineering',
-      author: 'AIPromptGen Team',
-      date: '2025-01-15',
-      readTime: '8 min read',
-      image: '/api/placeholder/600/300',
-      tags: ['AI', 'Prompt Engineering', 'Tutorial', 'Guide']
-    },
-    {
-      id: 2,
-      title: 'Top 10 AI Tools Every Content Creator Should Know in 2025',
-      excerpt: 'Discover the most powerful AI tools that are revolutionizing content creation, from writing assistants to image generators.',
-      content: `
-# Top 10 AI Tools Every Content Creator Should Know in 2025
+Mastering prompt engineering is essential for maximizing AI potential in 2025. Practice, measure, and refine your approach continuously.`
+      },
+      {
+        id: 2,
+        title: "ChatGPT vs Claude vs Gemini: The Ultimate AI Model Comparison",
+        excerpt: "A comprehensive analysis of the top AI models in 2025, helping you choose the right tool for your specific needs.",
+        category: "ai-models",
+        author: "AI Comparison Labs",
+        authorRole: "Model Testing Specialists",
+        date: "2025-01-12",
+        readTime: "15 min read",
+        rating: 4.8,
+        views: "22.7K",
+        tags: ["AI Models", "Comparison", "ChatGPT", "Claude", "Gemini"],
+        featured: true,
+        content: `# ChatGPT vs Claude vs Gemini: The Ultimate AI Model Comparison
 
-The content creation landscape has been transformed by AI. Here are the essential tools every creator should have in their toolkit.
+## Executive Summary
 
-## 1. ChatGPT - The Writing Assistant
+In 2025, the AI landscape is dominated by three major players: OpenAI's ChatGPT, Anthropic's Claude, and Google's Gemini. Each model has unique strengths and optimal use cases.
 
-Perfect for brainstorming, drafting, and editing content across all formats.
+## ChatGPT (GPT-4 and GPT-4 Turbo)
 
-## 2. Midjourney - Visual Storytelling
+### Strengths
+- **Versatility**: Excels across diverse tasks
+- **Code Generation**: Superior programming capabilities
+- **Integration**: Extensive API ecosystem
+- **Plugins**: Rich marketplace of extensions
 
-Create stunning images and artwork with simple text descriptions.
+### Best For
+- Software development and debugging
+- Creative writing and content generation
+- Business applications and automation
+- Educational tutoring and explanations
 
-## 3. Claude - Long-form Content
+## Claude (Claude-3 Opus, Sonnet, Haiku)
 
-Excellent for detailed articles, research, and complex writing tasks.
+### Strengths
+- **Safety**: Constitutional AI approach
+- **Analysis**: Deep analytical reasoning
+- **Context**: Longer context windows
+- **Nuance**: Better understanding of subtle instructions
 
-## 4. Canva AI - Design Made Simple
+### Best For
+- Research and analysis
+- Legal and compliance tasks
+- Long-form content creation
+- Sensitive or high-stakes applications
 
-Generate professional designs with AI-powered suggestions.
+## Google Gemini
 
-## 5. ElevenLabs - Voice Synthesis
+### Strengths
+- **Multimodal**: Native image and text processing
+- **Integration**: Deep Google ecosystem integration
+- **Real-time**: Access to current information
+- **Efficiency**: Optimized for specific Google services
 
-Create realistic voiceovers and audio content.
+### Best For
+- Multimodal applications
+- Google Workspace integration
+- Real-time information tasks
+- Image analysis and generation
 
-And 5 more amazing tools that will transform your content creation workflow...
-      `,
-      category: 'AI Tools',
-      author: 'Content Team',
-      date: '2025-01-14',
-      readTime: '12 min read',
-      image: '/api/placeholder/600/300',
-      tags: ['AI Tools', 'Content Creation', 'Productivity']
-    },
-    {
-      id: 3,
-      title: 'How to Use Voice Input for AI Prompt Generation',
-      excerpt: 'Learn how to leverage speech-to-text technology to create prompts faster and more naturally than ever before.',
-      content: `
-# How to Use Voice Input for AI Prompt Generation
+## Choosing the Right Model
 
-Voice input is revolutionizing how we interact with AI. Instead of typing lengthy prompts, you can now speak naturally and let speech-to-text technology do the work.
+Consider your specific needs:
+- **Development**: ChatGPT
+- **Analysis**: Claude
+- **Multimodal**: Gemini
+- **General Use**: Any, based on availability and cost
 
-## Benefits of Voice Input
+## Future Trends
 
-- **Speed**: Speak 3x faster than you type
-- **Natural Flow**: Express ideas more naturally
-- **Accessibility**: Perfect for users with typing difficulties
-- **Multitasking**: Create prompts while doing other tasks
+The AI model landscape continues evolving rapidly, with new capabilities and improvements released frequently.`
+      },
+      {
+        id: 3,
+        title: "10 AI Prompts That Will Transform Your Productivity",
+        excerpt: "Battle-tested prompt templates that have helped thousands of professionals streamline their workflows and boost efficiency.",
+        category: "productivity",
+        author: "Productivity AI Institute",
+        authorRole: "Workflow Optimization Experts",
+        date: "2025-01-10",
+        readTime: "10 min read",
+        rating: 4.9,
+        views: "31.5K",
+        tags: ["Productivity", "Templates", "Workflows", "Efficiency"],
+        featured: true,
+        content: `# 10 AI Prompts That Will Transform Your Productivity
 
-## Getting Started
+## Introduction
 
-1. **Enable Microphone**: Allow browser access to your microphone
-2. **Speak Clearly**: Use clear pronunciation and natural pacing
-3. **Structure Your Thoughts**: Organize ideas before speaking
-4. **Edit and Refine**: Review and improve the transcribed text
+These 10 AI prompts have been tested and refined by thousands of professionals across industries. Each prompt is designed to solve common productivity challenges.
+
+## 1. The Perfect Meeting Summarizer
+Transform lengthy meeting recordings into actionable summaries with clear decisions, action items, and follow-up requirements.
+
+## 2. Email Response Generator
+Craft professional responses quickly while maintaining your voice. Perfect for customer service and business communications.
+
+## 3. Strategic Planning Assistant
+Break down complex projects into manageable phases with risk analysis and resource requirements.
+
+## 4. Content Research Accelerator
+Rapidly research and organize information with expert opinions and actionable insights.
+
+## 5. Problem-Solving Framework
+Systematically approach complex challenges with root cause analysis and solution brainstorming.
+
+## 6. Learning Accelerator
+Master new skills efficiently with personalized learning plans and practice projects.
+
+## 7. Communication Optimizer
+Improve clarity and impact of your communications with better structure and tone.
+
+## 8. Decision-Making Assistant
+Make better decisions faster with structured analysis and scenario planning.
+
+## 9. Workflow Automation Planner
+Identify and plan process improvements with automation opportunities.
+
+## 10. Creative Brainstorming Engine
+Generate innovative ideas using traditional solutions and unconventional methods.
+
+## Implementation Tips
+Start with one prompt and master it before moving to others. The key to productivity is working smarter, not just faster.`
+      },
+      {
+        id: 4,
+        title: "Advanced Prompt Engineering for Software Developers",
+        excerpt: "Leverage AI to accelerate coding, debugging, and documentation with sophisticated prompt engineering techniques.",
+        category: "prompt-engineering",
+        author: "DevAI Collective",
+        authorRole: "AI-Powered Development Experts",
+        date: "2025-01-08",
+        readTime: "14 min read",
+        rating: 4.7,
+        views: "18.3K",
+        tags: ["Coding", "Development", "Debugging", "Technical Writing"],
+        featured: false,
+        content: `# Advanced Prompt Engineering for Software Developers
+
+## Introduction
+
+Modern software development increasingly relies on AI assistance. This guide covers advanced prompt engineering techniques specifically for developers.
+
+## Code Generation Prompts
+
+### The Architecture Planner
+Structure complex applications with clear separation of concerns and scalable patterns.
+
+### The Bug Hunter
+Systematically identify and fix issues with guided debugging approaches.
+
+### The Documentation Generator
+Create comprehensive, maintainable documentation automatically.
 
 ## Best Practices
 
-- Speak in complete sentences
-- Use verbal punctuation ("comma", "period")
-- Pause between different ideas
-- Review and edit the transcribed text
+1. **Context Setting**: Always provide file structure and dependencies
+2. **Specification Clarity**: Define exact requirements and constraints
+3. **Error Handling**: Include edge cases and error scenarios
+4. **Testing Integration**: Generate tests alongside implementation code
 
-Voice input is the future of AI interaction. Start practicing today!
-      `,
-      category: 'Tutorials',
-      author: 'Tech Team',
-      date: '2025-01-13',
-      readTime: '6 min read',
-      image: '/api/placeholder/600/300',
-      tags: ['Voice Input', 'Tutorial', 'Technology']
-    },
-    {
-      id: 4,
-      title: 'The Future of AI: What to Expect in 2025',
-      excerpt: 'Explore the latest trends and predictions for artificial intelligence, from multimodal AI to new breakthrough applications.',
-      content: `
-# The Future of AI: What to Expect in 2025
+## Advanced Techniques
 
-2025 is shaping up to be a pivotal year for artificial intelligence. Here's what experts predict we'll see.
+### Multi-Step Workflows
+Break complex development tasks into manageable, sequential prompts.
 
-## Major Trends
+### Code Review Assistant
+Systematically review code for security, performance, and maintainability.
 
-### Multimodal AI
-AI systems that can process text, images, audio, and video simultaneously.
+### Refactoring Guide
+Improve existing code structure while maintaining functionality.
 
-### Improved Reasoning
-Better logical thinking and problem-solving capabilities.
+## Conclusion
 
-### Specialized Models
-Industry-specific AI tools for healthcare, finance, education, and more.
+AI-assisted development is not about replacing developers but amplifying their capabilities and efficiency.`
+      },
+      {
+        id: 5,
+        title: "The Future of AI: Predictions for 2025-2030",
+        excerpt: "Expert insights into upcoming AI developments, from autonomous agents to breakthrough applications across industries.",
+        category: "ai-trends",
+        author: "FutureTech Research Institute",
+        authorRole: "AI Trend Analysts",
+        date: "2025-01-05",
+        readTime: "16 min read",
+        rating: 4.6,
+        views: "19.8K",
+        tags: ["Future Tech", "AI Trends", "Predictions", "Innovation"],
+        featured: false,
+        content: `# The Future of AI: Predictions for 2025-2030
 
-## Impact on Industries
+## Executive Summary
 
-- **Education**: Personalized learning experiences
-- **Healthcare**: Diagnostic assistance and drug discovery
-- **Creative Industries**: New forms of art and entertainment
-- **Business**: Automated decision-making and analysis
+The next five years will witness unprecedented AI advancement across multiple domains, fundamentally reshaping how we work, create, and solve complex problems.
 
-The future is exciting, and we're just getting started!
-      `,
-      category: 'Industry News',
-      author: 'Research Team',
-      date: '2025-01-12',
-      readTime: '10 min read',
-      image: '/api/placeholder/600/300',
-      tags: ['Future', 'AI Trends', 'Industry', 'Predictions']
-    },
-    {
-      id: 5,
-      title: '5 Quick Tips to Improve Your AI Prompts Instantly',
-      excerpt: 'Simple but effective techniques to get better results from any AI model with minimal effort.',
-      content: `
-# 5 Quick Tips to Improve Your AI Prompts Instantly
+## Key Predictions
 
-Want better AI results? These simple tips will immediately improve your prompt effectiveness.
+### 1. Autonomous AI Agents (2025-2027)
+AI systems will plan and execute complex multi-step tasks, interact with multiple systems, and operate with minimal human supervision.
 
-## Tip 1: Add Context
-Always provide background information about your request.
+### 2. Multimodal AI Integration (2025-2026)
+Seamless integration of text, image, audio, and video processing in unified AI systems.
 
-## Tip 2: Specify Format
-Tell the AI exactly how you want the output structured.
+### 3. Edge AI and Distributed Intelligence (2025-2026)
+AI processing moves to local devices and edge infrastructure, providing reduced latency, enhanced privacy, and offline capabilities.
 
-## Tip 3: Use Examples
-Show the AI what you're looking for with concrete examples.
+### 4. AI-Generated Synthetic Media (2025-2028)
+Photorealistic content generation advances to real-time video synthesis and personalized content at scale.
 
-## Tip 4: Set Constraints
-Define length, tone, style, and other requirements clearly.
+## Industry Applications
 
-## Tip 5: Iterate and Refine
-Don't expect perfection on the first try - refine your prompts.
+Healthcare, education, and transportation will see transformative changes through AI implementation.
 
-These simple changes will dramatically improve your AI interactions!
-      `,
-      category: 'Tips & Tricks',
-      author: 'AIPromptGen Team',
-      date: '2025-01-11',
-      readTime: '4 min read',
-      image: '/api/placeholder/600/300',
-      tags: ['Tips', 'Quick Guide', 'Improvement']
-    },
-    {
-      id: 6,
-      title: 'Building an AI-Powered Workflow for Content Teams',
-      excerpt: 'Step-by-step guide to integrating AI tools into your content creation process for maximum efficiency.',
-      content: `
-# Building an AI-Powered Workflow for Content Teams
+## Preparing for the AI Future
 
-Transform your content team's productivity with a well-designed AI workflow.
+Individuals should develop AI literacy and focus on uniquely human skills. Organizations need comprehensive AI strategies and workforce development.
 
-## Planning Phase
-- Use AI for topic research and trend analysis
-- Generate content calendars and publishing schedules
-- Create detailed content briefs and outlines
+The next five years will be pivotal for AI development.`
+      }
+    ])
+  }, [])
 
-## Creation Phase
-- Draft content with AI writing assistants
-- Generate images and graphics with AI tools
-- Create variations and alternatives quickly
+  const filteredBlogPosts = blogPosts
+    .filter(post => selectedBlogCategory === 'all' || post.category === selectedBlogCategory)
+    .filter(post => post.title.toLowerCase().includes(blogSearchQuery.toLowerCase()) || 
+                   post.excerpt.toLowerCase().includes(blogSearchQuery.toLowerCase()))
 
-## Review Phase
-- AI-powered editing and proofreading
-- SEO optimization suggestions
-- Performance prediction and improvement tips
+  const featuredPosts = blogPosts.filter(post => post.featured)
 
-## Publishing Phase
-- Automated social media post generation
-- Meta descriptions and title optimization
-- Distribution strategy recommendations
-
-A well-integrated AI workflow can increase content team productivity by 300%!
-      `,
-      category: 'Tutorials',
-      author: 'Workflow Expert',
-      date: '2025-01-10',
-      readTime: '15 min read',
-      image: '/api/placeholder/600/300',
-      tags: ['Workflow', 'Content Teams', 'Productivity', 'AI Integration']
-    }
-  ]
-
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesCategory = selectedCategory === 'all' || post.category.toLowerCase() === selectedCategory.toLowerCase()
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
-    return matchesCategory && matchesSearch
-  })
-
-  const handleReadMore = (post) => {
-    setSelectedPost(post)
+  const openBlogModal = (post) => {
+    setSelectedBlogPost(post)
+    setIsBlogModalOpen(true)
+    document.body.style.overflow = 'hidden'
   }
 
-  const handleCloseModal = () => {
-    setSelectedPost(null)
+  const closeBlogModal = () => {
+    setSelectedBlogPost(null)
+    setIsBlogModalOpen(false)
+    document.body.style.overflow = 'unset'
   }
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <Navigation />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="space-y-8">
-          {/* Header */}
-          <div className="text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-              AI Insights Blog
+          {/* Hero Section */}
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent mb-6">
+              📝 AI Blog & Resources
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Latest insights, tutorials, and news about AI, prompt engineering, and productivity
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
+              Latest insights, tutorials, and best practices for AI prompt engineering
             </p>
-          </div>
-
-          {/* Search and Filter */}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <div className="flex flex-col lg:flex-row gap-4">
-              <div className="flex-1">
+            
+            {/* Search and Filter */}
+            <div className="max-w-2xl mx-auto">
+              <div className="relative mb-6">
                 <input
                   type="text"
-                  placeholder="Search articles..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Search blog posts..."
+                  className="w-full px-6 py-4 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                  value={blogSearchQuery}
+                  onChange={(e) => setBlogSearchQuery(e.target.value)}
                 />
+                <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                  <span className="text-gray-400 text-xl">🔍</span>
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {categories.map((category) => (
+              
+              {/* Category Filter */}
+              <div className="flex flex-wrap justify-center gap-3">
+                {[
+                  { key: 'all', label: 'All Posts', emoji: '📝' },
+                  { key: 'prompt-engineering', label: 'Prompt Engineering', emoji: '🔧' },
+                  { key: 'ai-models', label: 'AI Models', emoji: '🤖' },
+                  { key: 'productivity', label: 'Productivity', emoji: '📈' },
+                  { key: 'ai-trends', label: 'AI Trends', emoji: '🚀' }
+                ].map((category) => (
                   <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category.toLowerCase())}
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                      selectedCategory === category.toLowerCase()
-                        ? 'bg-blue-500 text-white'
-                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                    key={category.key}
+                    onClick={() => setSelectedBlogCategory(category.key)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                      selectedBlogCategory === category.key
+                        ? 'bg-blue-600 text-white transform scale-105'
+                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white'
                     }`}
                   >
-                    {category}
+                    {category.emoji} {category.label}
                   </button>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Blog Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post) => (
-              <article key={post.id} className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition-colors card-hover">
-                <div className="h-48 bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center">
-                  <span className="text-white text-lg font-semibold">📝</span>
-                </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center space-x-2 mb-3">
-                    <span className="px-2 py-1 bg-blue-500 text-white text-xs rounded-full">
-                      {post.category}
-                    </span>
-                    <span className="text-gray-400 text-xs">{post.readTime}</span>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
-                    {post.title}
-                  </h3>
-                  
-                  <p className="text-gray-300 text-sm mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {post.tags.map((tag, index) => (
-                      <span key={index} className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="text-xs text-gray-400">
-                      <div>{post.author}</div>
-                      <div>{post.date}</div>
+          {/* Featured Posts */}
+          {selectedBlogCategory === 'all' && featuredPosts.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-white mb-6 text-center">⭐ Featured Articles</h2>
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {featuredPosts.map((post) => (
+                  <div key={post.id} className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 hover:shadow-xl group cursor-pointer"
+                       onClick={() => openBlogModal(post)}>
+                    <div className="flex items-start justify-between mb-4">
+                      <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">FEATURED</span>
+                      <div className="flex items-center space-x-1">
+                        <span className="text-yellow-400">⭐</span>
+                        <span className="text-sm text-gray-300">{post.rating}</span>
+                      </div>
                     </div>
-                    <button
-                      onClick={() => handleReadMore(post)}
-                      className="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors"
-                    >
-                      Read More
-                    </button>
+                    
+                    <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-3 line-clamp-2">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-gray-300 mb-4 text-sm leading-relaxed line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post.tags.slice(0, 2).map((tag, index) => (
+                        <span key={index} className="px-2 py-1 bg-blue-900/30 text-blue-400 text-xs rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <div className="flex items-center justify-between text-sm text-gray-400">
+                      <div className="flex items-center space-x-4">
+                        <span>👁️ {post.views}</span>
+                        <span>📖 {post.readTime}</span>
+                      </div>
+                      <span>{new Date(post.date).toLocaleDateString()}</span>
+                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          {filteredPosts.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-400 text-lg">No articles found matching your criteria.</p>
+                ))}
+              </div>
             </div>
           )}
+
+          {/* All Posts */}
+          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+            <h2 className="text-2xl font-bold mb-6 text-blue-400">
+              📚 All Blog Posts ({filteredBlogPosts.length})
+            </h2>
+            
+            {filteredBlogPosts.length === 0 ? (
+              <div className="text-center py-12">
+                <span className="text-6xl mb-4 block">📝</span>
+                <h3 className="text-xl font-bold text-white mb-2">No posts found</h3>
+                <p className="text-gray-400">Try adjusting your search or filter criteria</p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {filteredBlogPosts.map((post) => (
+                  <div key={post.id} className="bg-gray-700 rounded-lg p-6 border border-gray-600 hover:border-blue-500 transition-all duration-300 cursor-pointer group"
+                       onClick={() => openBlogModal(post)}>
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-gray-300 mb-3 line-clamp-2">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center space-x-4 text-sm text-gray-400">
+                          <span>👤 {post.author}</span>
+                          <span>📅 {new Date(post.date).toLocaleDateString()}</span>
+                          <span>📖 {post.readTime}</span>
+                          <span>👁️ {post.views}</span>
+                          <div className="flex items-center space-x-1">
+                            <span className="text-yellow-400">⭐</span>
+                            <span>{post.rating}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <button className="ml-4 text-gray-400 hover:text-white transition-colors">
+                        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {post.tags.map((tag, index) => (
+                        <span key={index} className="px-2 py-1 bg-gray-600 text-gray-300 text-xs rounded">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </main>
 
-      {/* Blog Post Modal */}
-      {selectedPost && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+      {/* Blog Modal */}
+      {isBlogModalOpen && selectedBlogPost && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 overflow-y-auto">
           <div className="bg-gray-800 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gray-700">
-            <div className="p-6">
-              <div className="flex justify-between items-start mb-6">
-                <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-3">
-                    <span className="px-2 py-1 bg-blue-500 text-white text-xs rounded-full">
-                      {selectedPost.category}
-                    </span>
-                    <span className="text-gray-400 text-xs">{selectedPost.readTime}</span>
-                  </div>
-                  <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                    {selectedPost.title}
-                  </h1>
-                  <div className="flex items-center space-x-4 text-sm text-gray-400 mb-6">
-                    <span>By {selectedPost.author}</span>
-                    <span>{selectedPost.date}</span>
+            <div className="sticky top-0 bg-gray-800 border-b border-gray-700 p-6 flex justify-between items-center">
+              <div>
+                <h2 className="text-2xl font-bold text-white mb-2">{selectedBlogPost.title}</h2>
+                <div className="flex items-center space-x-4 text-sm text-gray-400">
+                  <span>👤 {selectedBlogPost.author}</span>
+                  <span>📅 {new Date(selectedBlogPost.date).toLocaleDateString()}</span>
+                  <span>📖 {selectedBlogPost.readTime}</span>
+                  <div className="flex items-center space-x-1">
+                    <span className="text-yellow-400">⭐</span>
+                    <span>{selectedBlogPost.rating}</span>
                   </div>
                 </div>
-                <button
-                  onClick={handleCloseModal}
-                  className="ml-4 text-gray-400 hover:text-white transition-colors"
-                >
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
               </div>
-              
+              <button 
+                onClick={closeBlogModal}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6">
               <div className="prose prose-invert max-w-none">
-                <div className="text-gray-300 leading-relaxed whitespace-pre-line">
-                  {selectedPost.content}
+                <div className="whitespace-pre-wrap text-gray-300 leading-relaxed">
+                  {selectedBlogPost.content}
                 </div>
               </div>
               
               <div className="mt-8 pt-6 border-t border-gray-700">
-                <div className="flex flex-wrap gap-2">
-                  {selectedPost.tags.map((tag, index) => (
-                    <span key={index} className="px-3 py-1 bg-gray-700 text-gray-300 text-sm rounded-full">
-                      #{tag}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {selectedBlogPost.tags.map((tag, index) => (
+                    <span key={index} className="px-3 py-1 bg-blue-900/30 text-blue-400 text-sm rounded-full">
+                      {tag}
                     </span>
                   ))}
+                </div>
+                
+                <div className="bg-gray-700 rounded-lg p-4">
+                  <h4 className="font-bold text-white mb-2">About the Author</h4>
+                  <p className="text-gray-300">
+                    <strong>{selectedBlogPost.author}</strong> - {selectedBlogPost.authorRole}
+                  </p>
                 </div>
               </div>
             </div>
