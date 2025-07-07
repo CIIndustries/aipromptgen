@@ -27,7 +27,7 @@ export default function DownloadPage() {
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold mb-4 text-white">📦 Download All Files (Google Drive)</h2>
             <a
-              href="https://drive.google.com/drive/folders/1example"
+              href="https://drive.google.com/drive/folders/1i88UTPVyvHg9HPHvRTb6ufqvZgPEYRtS?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors transform hover:scale-105"
@@ -61,7 +61,7 @@ export default function DownloadPage() {
                 </div>
               </div>
               <a
-                href="https://drive.google.com/drive/folders/1example"
+                href="https://drive.google.com/drive/folders/1i88UTPVyvHg9HPHvRTb6ufqvZgPEYRtS?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg font-medium hover:bg-blue-600 transition-colors text-center"
@@ -82,7 +82,7 @@ export default function DownloadPage() {
                 </div>
               </div>
               <a
-                href="https://drive.google.com/drive/folders/1example"
+                href="https://drive.google.com/drive/folders/1i88UTPVyvHg9HPHvRTb6ufqvZgPEYRtS?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg font-medium hover:bg-blue-600 transition-colors text-center"
@@ -103,7 +103,7 @@ export default function DownloadPage() {
                 </div>
               </div>
               <a
-                href="https://drive.google.com/drive/folders/1example"
+                href="https://drive.google.com/drive/folders/1i88UTPVyvHg9HPHvRTb6ufqvZgPEYRtS?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg font-medium hover:bg-blue-600 transition-colors text-center"
