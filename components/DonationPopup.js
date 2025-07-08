@@ -5,17 +5,30 @@ export default function DonationPopup() {
   const [showPopup, setShowPopup] = useState(false)
 
   useEffect(() => {
-    const hasSeenDonation = localStorage.getItem('hasSeenDonationPopup')
-    if (!hasSeenDonation) {
+    const lastShownDate = localStorage.getItem('donationPopupLastShown')
+    const now = new Date().getTime()
+    
+    if (!lastShownDate) {
+      // First time - show after 3 seconds
       setTimeout(() => {
         setShowPopup(true)
       }, 3000)
+    } else {
+      const daysSinceLastShown = (now - parseInt(lastShownDate)) / (1000 * 60 * 60 * 24)
+      
+      if (daysSinceLastShown >= 3) {
+        // Show popup if 3 or more days have passed
+        setTimeout(() => {
+          setShowPopup(true)
+        }, 3000)
+      }
     }
   }, [])
 
   const handleClose = () => {
     setShowPopup(false)
-    localStorage.setItem('hasSeenDonationPopup', 'true')
+    // Store current timestamp when popup is closed
+    localStorage.setItem('donationPopupLastShown', new Date().getTime().toString())
   }
 
   const handleDonate = () => {
