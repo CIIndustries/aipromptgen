@@ -1,129 +1,135 @@
+'use client'
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
-
-export const metadata = {
-  title: 'Privacy Policy - AIPromptGen Pro',
-  description: 'Privacy Policy for AIPromptGen Pro. Learn how we protect your data and privacy when using our AI prompt generator.',
-}
 
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <Navigation />
       
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="space-y-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent mb-6">
               Privacy Policy
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Last updated: January 15, 2025
+              How we protect and handle your personal information
             </p>
+            <p className="text-gray-400 mt-2">Last updated: January 15, 2025</p>
+          </div>
+          
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4">📊 Data We Collect</h3>
+              <p className="text-gray-300 mb-4">
+                We collect minimal data necessary to provide our AI prompt engineering services effectively.
+              </p>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Information You Provide:</h4>
+                  <ul className="space-y-1 text-gray-300 text-sm">
+                    <li>• Prompt inputs and generated content</li>
+                    <li>• Contact form submissions</li>
+                    <li>• Newsletter subscriptions (optional)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Automatic Collection:</h4>
+                  <ul className="space-y-1 text-gray-300 text-sm">
+                    <li>• IP address for session management</li>
+                    <li>• Browser and device information</li>
+                    <li>• Usage patterns and preferences</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4">🔒 How We Use Your Data</h3>
+              <p className="text-gray-300 mb-4">
+                Your data is used exclusively to provide and improve our AI prompt engineering services.
+              </p>
+              <div className="space-y-2 text-gray-300">
+                <p><strong className="text-white">Service Delivery:</strong> Process and enhance your prompts</p>
+                <p><strong className="text-white">Personalization:</strong> Remember your preferences and history</p>
+                <p><strong className="text-white">Improvements:</strong> Analyze usage to enhance features</p>
+                <p><strong className="text-white">Communication:</strong> Send updates and support responses</p>
+              </div>
+            </div>
+            
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4">🛡️ Data Protection</h3>
+              <p className="text-gray-300 mb-4">
+                We implement industry-standard security measures to protect your information.
+              </p>
+              <div className="space-y-3 text-gray-300">
+                <p><strong className="text-white">Encryption:</strong> All data transmitted using HTTPS/TLS encryption.</p>
+                <p><strong className="text-white">Storage:</strong> Secure cloud infrastructure with access controls.</p>
+                <p><strong className="text-white">Access:</strong> Limited employee access on need-to-know basis.</p>
+                <p><strong className="text-white">Monitoring:</strong> Regular security audits and updates.</p>
+              </div>
+            </div>
+            
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4">🤝 Data Sharing</h3>
+              <p className="text-gray-300 mb-4">
+                We do not sell, rent, or share your personal data with third parties except as outlined below.
+              </p>
+              <div className="space-y-2 text-gray-300">
+                <p><strong className="text-white">Service Providers:</strong> Trusted partners who help deliver our services</p>
+                <p><strong className="text-white">Legal Requirements:</strong> When required by law or to protect rights</p>
+                <p><strong className="text-white">Business Transfers:</strong> In case of merger or acquisition (with notice)</p>
+                <p><strong className="text-red-400">Never for Marketing:</strong> We don't sell data to advertisers</p>
+              </div>
+            </div>
+            
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4">⚙️ Your Privacy Rights</h3>
+              <p className="text-gray-300 mb-4">
+                You have control over your personal information and how it's used.
+              </p>
+              <ul className="space-y-2 text-gray-300">
+                <li className="flex items-center">
+                  <span className="text-green-400 mr-2">✓</span>
+                  Access and review your stored data
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-400 mr-2">✓</span>
+                  Request correction of inaccurate information
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-400 mr-2">✓</span>
+                  Delete your account and associated data
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-400 mr-2">✓</span>
+                  Opt-out of non-essential communications
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4">📞 Contact & Questions</h3>
+              <p className="text-gray-300 mb-4">
+                Questions about our privacy practices? We're committed to transparency and helping you understand our policies.
+              </p>
+              <div className="space-y-3 text-gray-300">
+                <p><strong className="text-white">Privacy Officer:</strong> Available for privacy-related questions and requests.</p>
+                <p><strong className="text-white">Response Time:</strong> We respond to privacy inquiries within 72 hours.</p>
+                <p><strong className="text-white">Updates:</strong> Material changes to this policy will be communicated via email.</p>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-gray-800 rounded-lg p-8 border border-gray-700 space-y-6">
-            <section>
-              <h2 className="text-2xl font-bold mb-4 text-blue-400">1. Information We Collect</h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-green-400">Information You Provide</h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    We collect information you provide directly to us, such as when you create prompts, 
-                    subscribe to our newsletter, or contact us for support. This may include:
-                  </p>
-                  <ul className="space-y-2 text-gray-300 ml-6 mt-2">
-                    <li>• Your name and email address</li>
-                    <li>• Prompt content you create or submit</li>
-                    <li>• Messages you send to us</li>
-                    <li>• Feedback and survey responses</li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-green-400">Automatically Collected Information</h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    We automatically collect certain information about your device and usage of our service:
-                  </p>
-                  <ul className="space-y-2 text-gray-300 ml-6 mt-2">
-                    <li>• IP address and location information</li>
-                    <li>• Browser type and version</li>
-                    <li>• Device information and operating system</li>
-                    <li>• Usage patterns and preferences</li>
-                    <li>• Cookies and similar tracking technologies</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4 text-blue-400">2. How We Use Your Information</h2>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                We use the information we collect to:
-              </p>
-              <ul className="space-y-2 text-gray-300 ml-6">
-                <li>• Provide, maintain, and improve our services</li>
-                <li>• Process your requests and transactions</li>
-                <li>• Send you technical notices and support messages</li>
-                <li>• Respond to your comments and questions</li>
-                <li>• Analyze usage patterns to improve user experience</li>
-                <li>• Prevent fraud and enhance security</li>
-                <li>• Comply with legal obligations</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4 text-blue-400">3. Information Sharing and Disclosure</h2>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                We do not sell, trade, or otherwise transfer your personal information to third parties except in the following circumstances:
-              </p>
-              <ul className="space-y-2 text-gray-300 ml-6">
-                <li>• With your explicit consent</li>
-                <li>• To comply with legal requirements or court orders</li>
-                <li>• To protect our rights, property, or safety</li>
-                <li>• In connection with a business transfer or merger</li>
-                <li>• With service providers who assist in our operations (under strict confidentiality agreements)</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4 text-blue-400">4. Data Security</h2>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                We implement appropriate security measures to protect your personal information:
-              </p>
-              <ul className="space-y-2 text-gray-300 ml-6">
-                <li>• Encryption of data in transit and at rest</li>
-                <li>• Regular security assessments and updates</li>
-                <li>• Access controls and authentication measures</li>
-                <li>• Secure hosting with reputable cloud providers</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4 text-blue-400">5. Your Rights</h2>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                You have the following rights regarding your personal information:
-              </p>
-              <ul className="space-y-2 text-gray-300 ml-6">
-                <li>• Access: Request access to your personal data</li>
-                <li>• Correction: Request correction of inaccurate information</li>
-                <li>• Deletion: Request deletion of your personal data</li>
-                <li>• Portability: Request transfer of your data</li>
-                <li>• Opt-out: Unsubscribe from marketing communications</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4 text-blue-400">6. Contact Us</h2>
-              <p className="text-gray-300 leading-relaxed">
-                If you have any questions about this Privacy Policy, please contact us:
-              </p>
-              <div className="mt-4 p-4 bg-gray-700 rounded-lg">
-                <p className="text-blue-400 font-medium">Email: support@aipromptgen.tech</p>
-                <p className="text-gray-300">Website: https://aipromptgen.tech</p>
-                <p className="text-gray-300">Subject Line: Privacy Policy Inquiry</p>
-              </div>
-            </section>
+          <div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border border-green-500/30 rounded-lg p-8 text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">🔐 Privacy Commitment</h3>
+            <p className="text-gray-300 mb-4">
+              Your privacy is fundamental to our service. We're committed to protecting your data and being transparent about our practices.
+            </p>
+            <p className="text-green-400 font-medium">
+              Questions about this policy? Contact us anytime through our support channels.
+            </p>
           </div>
         </div>
       </main>
