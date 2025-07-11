@@ -86,6 +86,12 @@ export default function RootLayout({ children }) {
             })
           }}
         />
+        {/* Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4591516845324922"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="bg-gray-900 text-white min-h-screen">
         {children}
@@ -93,4 +99,3 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
-
