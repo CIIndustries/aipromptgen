@@ -38,6 +38,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="theme-color" content="#2563eb" />
         <meta name="google-adsense-account" content="ca-pub-4591516845324922" />
+        <meta name="pushsdk" content="3181d05f834655701c5b819fbe4cc29e" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <script
