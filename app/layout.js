@@ -108,11 +108,6 @@ export default function RootLayout({ children }) {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4591516845324922"
           crossOrigin="anonymous"
         />
-        {/* Adsterra */}
-        <script
-          type="text/javascript"
-          src="//pl27151412.profitableratecpm.com/e3/b3/28/e3b3287c31c5e546ecc0447e2d688b18.js"
-        />
       </head>
       <body className="bg-gray-900 text-white min-h-screen">
         {children}
