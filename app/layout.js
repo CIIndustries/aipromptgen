@@ -36,26 +36,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <head>
-        {/* Ezoic Privacy Scripts - MUST BE FIRST */}
-        <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-        <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-        
-        {/* Ezoic Header Script */}
-        <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.ezstandalone = window.ezstandalone || {};
-              ezstandalone.cmd = ezstandalone.cmd || [];
-            `,
-          }}
-        />
-
         <meta name="theme-color" content="#2563eb" />
         <meta name="google-adsense-account" content="ca-pub-4591516845324922" />
-        <meta name="pushsdk" content="3181d05f834655701c5b819fbe4cc29e" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        
+        {/* Google Analytics */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-5GX6BQS5NP"
@@ -70,6 +56,8 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+        
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -102,6 +90,7 @@ export default function RootLayout({ children }) {
             })
           }}
         />
+        
         {/* Google AdSense */}
         <script
           async
