@@ -10,7 +10,6 @@ export default function Navigation() {
   const navigation = [
     { name: 'Generator', href: '/', current: pathname === '/' },
     { name: 'AI Tools', href: '/tools', current: pathname === '/tools' },
-    { name: 'Blog', href: '/blog', current: pathname === '/blog' },
     { name: 'About', href: '/about', current: pathname === '/about' },
     { name: 'Contact', href: '/contact', current: pathname === '/contact' },
     { name: 'History', href: '/history', current: pathname === '/history' },
@@ -97,4 +96,3 @@ export default function Navigation() {
     </nav>
   )
 }
-
