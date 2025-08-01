@@ -396,6 +396,53 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Donation Section */}
+          <div className="bg-gradient-to-r from-yellow-900/20 to-orange-900/20 border border-yellow-500/30 rounded-lg p-6">
+            <div className="text-center space-y-4">
+              <div className="flex items-center justify-center space-x-2">
+                <span className="text-2xl">☕</span>
+                <h2 className="text-2xl font-bold text-yellow-400">Support AIPromptGen Pro</h2>
+              </div>
+              <p className="text-gray-300 max-w-2xl mx-auto">
+                Love using our AI prompt generator? Your support helps us keep improving and adding new features for the community.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href="https://www.paypal.com/donate/?business=cyberintelindustries%40gmail.com&no_recurring=0&item_name=Support+AIPromptGen+Pro+development&currency_code=USD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  <span>💙</span>
+                  <span>Donate via PayPal</span>
+                </a>
+                <a
+                  href="https://buy.stripe.com/test_4gw6st4mXg4xasU144"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  <span>🎯</span>
+                  <span>Support via Stripe</span>
+                </a>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400">
+                <div className="flex items-center space-x-1">
+                  <span>🚀</span>
+                  <span>New Features</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <span>🛠️</span>
+                  <span>Server Costs</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <span>💡</span>
+                  <span>Innovation</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       
