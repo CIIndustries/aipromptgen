@@ -13,8 +13,6 @@ export default function Navigation() {
     { name: 'Blog', href: '/blog', current: pathname === '/blog' },
     { name: 'About', href: '/about', current: pathname === '/about' },
     { name: 'Contact', href: '/contact', current: pathname === '/contact' },
-    { name: 'History', href: '/history', current: pathname === '/history' },
-    { name: 'Favorites', href: '/favorites', current: pathname === '/favorites' },
   ]
 
   return (
