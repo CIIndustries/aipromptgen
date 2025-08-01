@@ -288,7 +288,9 @@ export default function Home() {
               {generatedPrompt && (
                 <div className="bg-gray-700 rounded-lg p-4 border border-gray-600 animate-fadeIn">
                   <h3 className="text-lg font-semibold mb-3 text-blue-400">Enhanced Prompt:</h3>
-                  <p className="text-gray-200 whitespace-pre-wrap mb-4">{generatedPrompt}</p>
+                  <div className="max-h-64 overflow-y-auto bg-gray-800 rounded-lg p-4 mb-4 border border-gray-600">
+                    <p className="text-gray-200 whitespace-pre-wrap">{generatedPrompt}</p>
+                  </div>
                   
                   {/* Action Buttons */}
                   <div className="flex flex-wrap gap-2">
