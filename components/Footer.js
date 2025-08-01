@@ -100,17 +100,6 @@ export default function Footer() {
           <p className="text-gray-400 text-sm">
             © 2025 AIPromptGen Pro. All rights reserved.
           </p>
-          <p className="text-gray-500 text-xs mt-2">
-            Built and Powered by{' '}
-            <a
-              href="https://ciindustries.us"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 underline"
-            >
-              ciindustries.us
-            </a>
-          </p>
         </div>
       </div>
     </footer>
