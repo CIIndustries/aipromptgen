@@ -212,6 +212,33 @@ export default function Home() {
                     </button>
                   ))}
                 </div>
+               </div>
+
+              {/* Donation Box */}
+              <div className="p-4 rounded-lg bg-gradient-to-r from-purple-900/20 to-blue-900/20 border border-purple-500/30">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-white">
+                        ❤️ Support AIPromptGen.tech
+                      </h3>
+                      <p className="text-xs text-gray-300">
+                        Help keep this <span className="text-green-400">100% free</span> and <span className="text-blue-400">ad-free</span>!
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => window.open('https://buy.stripe.com/4gMaEY5ud1g0eQh8Iyds40b', '_blank')}
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 text-sm"
+                  >
+                    💝 Donate
+                  </button>
+                </div>
               </div>
 
               {/* Input Section */}
@@ -219,6 +246,7 @@ export default function Home() {
                 <label className="block text-sm font-medium text-gray-300 mb-3">
                   Your Prompt Idea
                 </label>
+                
                 <div className="relative">
                   <textarea
                     value={inputPrompt}
