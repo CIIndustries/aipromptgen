@@ -188,6 +188,44 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Donation Section */}
+          <div className="bg-gradient-to-r from-yellow-900/20 to-orange-900/20 border border-yellow-500/30 rounded-lg p-6">
+            <div className="text-center space-y-4">
+              <div className="flex items-center justify-center space-x-2">
+                <span className="text-2xl">☕</span>
+                <h2 className="text-2xl font-bold text-yellow-400">Support AIPromptGen Pro</h2>
+              </div>
+              <p className="text-gray-300 max-w-2xl mx-auto">
+                Love using our AI prompt generator? Your support helps us keep improving and adding new features for the community.
+              </p>
+              <div className="flex items-center justify-center">
+                <a
+                  href="https://buy.stripe.com/4gMaEY5ud1g0eQh8Iyds40b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105"
+                >
+                  <span>❤️</span>
+                  <span>Support Our Work</span>
+                </a>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400">
+                <div className="flex items-center space-x-1">
+                  <span>🚀</span>
+                  <span>New Features</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <span>🛠️</span>
+                  <span>Server Costs</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <span>💡</span>
+                  <span>Innovation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Main Generator */}
           <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
             <div className="space-y-6">
