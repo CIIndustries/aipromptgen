@@ -109,7 +109,7 @@ export default function ContactPage() {
                   href="mailto:cyberintelindustries@gmail.com" 
                   className="text-blue-400 hover:text-blue-300 transition-colors"
                 >
-                  support@aipromptgen.tech
+                  cyberintelindustries@gmail.com
                 </a>
               </div>
 
@@ -123,6 +123,19 @@ export default function ContactPage() {
                   <li>• UI/UX improvements</li>
                   <li>• Additional prompt templates</li>
                   <li>• New tool suggestions</li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                <h3 className="text-xl font-bold mb-4 text-blue-400">🐛 Bug Reports</h3>
+                <p className="text-gray-300 mb-4">
+                  Found a bug? Help us improve by reporting it with:
+                </p>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• Detailed description of the issue</li>
+                  <li>• Steps to reproduce</li>
+                  <li>• Browser and device information</li>
+                  <li>• Screenshots if applicable</li>
                 </ul>
               </div>
 
