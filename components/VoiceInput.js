@@ -163,7 +163,7 @@ export default function VoiceInput({ onTranscript, disabled }) {
       {isListening && (
         <div className="absolute top-12 left-0 bg-gray-800 border border-red-500 rounded-lg p-4 w-64 z-50 animate-fadeIn">
           <div className="flex items-center space-x-2 mb-2">
-            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+            <div className="recording-dot"></div>
             <span className="text-sm text-white">Recording... Keep speaking naturally</span>
           </div>
           
