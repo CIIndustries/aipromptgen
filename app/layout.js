@@ -40,8 +40,6 @@ export default function RootLayout({ children }) {
         <meta name="google-adsense-account" content="ca-pub-4591516845324922" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        
-        {/* Google Analytics */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-5GX6BQS5NP"
@@ -56,8 +54,6 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-        
-        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -89,13 +85,6 @@ export default function RootLayout({ children }) {
               ]
             })
           }}
-        />
-        
-        {/* Google AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4591516845324922"
-          crossOrigin="anonymous"
         />
       </head>
       <body className="bg-gray-900 text-white min-h-screen">
