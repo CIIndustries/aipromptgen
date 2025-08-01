@@ -60,4 +60,3 @@ export default function Toast({ message, type = 'success', onClose }) {
     </div>
   )
 }
-
